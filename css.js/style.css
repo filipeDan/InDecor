@@ -1,0 +1,309 @@
+/* /* /* Definição de cores principais usando variáveis CSS */
+
+:root {
+    --primary: #00baf2;
+    --secondary: #95989a;
+    --text-color: #fff;
+    --text-secondary: #000;
+    --text-tertiary: #5d5d5d;
+    }
+    
+    /* Estilos gerais, LETRAS E TAMANHOS  */
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin:10px; 
+    padding: 0px; 
+    box-sizing:border-box;
+ 
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    background: url('/img_InDecor/hrz-5.jpg')  no-repeat center center/cover; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: rgb(14, 4, 4);
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.7);
+}
+.hero::before {/* .hero::before: Adiciona uma pseudo-elemento antes do conteúdo do header, criando uma camada de sombra preta quase transparente sobre a imagem. */
+    content: '';
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.76);
+    z-index: 1; 
+}
+
+ .hero-content,  .form-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-content  {
+    /* background-color:rgba(0, 0, 0, 0.7); *//* ESTE É A SOMBRA PRETA EM CIMA DA IMAGEM */
+    padding: 0px;
+    border-radius: 0px;  /* deixar a ponta da borda quadrada */
+    text-align: left;      
+}
+.hero-content h1 {/* INDECOR */
+    color: var(--primary);
+    text-align: left;
+    margin-bottom: 40px; /* espaçamento na parte debaixo das frase */
+    font-size: 40px;/* aumenta a letra */
+    
+}
+
+.hero-content p {/* evento */
+    color: var(--text-color);
+    word-wrap: break-word;
+    font-weight: bold; /* texto em negrito */
+    text-align: left;/* para deixar o texto a esquerda */
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.hero-content h3{
+    color: var(--text-color );
+    font-size: 10px;
+ 
+
+}
+.hero-content p1 {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 10px;
+}
+/* Formulário */
+.form-container {
+    /*    padding: px; */
+       background-color:var(--secondary);
+       text-align: center;
+       display: flex;
+       flex-direction: column;
+      /*  gap: px; */
+       max-width: 400px; /* MEXE COM A LATERAL DO FORM */
+       height: 500px; ;/* mexe com a altura do form cinza */
+       margin: 0 auto;
+       border-radius: 0px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   }
+   
+   form {
+       display: flex;
+       flex-direction: column;
+      
+   } 
+   label {
+       text-align: left;
+       margin-bottom: 5px;
+       color: var(--text-secondary);
+   }
+   input, select, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC107;
+}
+
+/* Seção de aprendizado */
+
+.learning h2{
+
+    background-color: var(--secondary);/* cor de fundo */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center;/* Centraliza o texto */
+    margin: 0 -20px; /* Remove a margem padrão e adiciona uma margem negativa para ocupar toda a largura */
+    padding: 20px 10px;
+    margin-top: -30px;/* Remove a margem superior para encostar na imagem de cima */
+}
+
+/* Estilo para imagens redondas */
+.round-image {
+    width: 150px; /*  a largura da imagem */
+    height: 150px; /*  a altura da imagem */
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+}
+.learning {
+    padding: 20px;/* o espaço interno de um elemento */
+    background-color: #fff; 
+    text-align: center;
+}
+
+.learning-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+   /*  background-color: #f4f4f4; */
+   padding: 20px;/* o espaço interno de um elemento */
+   /*  border-radius: 10px; */
+   /*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.item p {
+    margin-top: 10px;
+}
+
+.location {
+    position: relative;/* Permite que os elementos filhos sejam posicionados em relação a este contêiner */
+    background: url('/img_InDecor/hrz-6.jpg') no-repeat center center/cover; /* Imagem de fundo ajustada */
+    height: 50vh; /* Define a altura da seção */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* Centraliza verticalmente os elementos */
+    align-items: center;/* Centraliza horizontalmente os elementos */
+    color: #fff;/* cor do texto */
+    text-align: center;/* Alinha o texto ao centro */
+}
+
+.location::before {
+content: ''; /* Cria um elemento vazio */
+position: absolute;/* Sobrepõe a imagem de fundo */
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);/* deixa transparente a sombra */
+z-index: 1;/* Garante que a sombra fique atrás do texto */
+}
+
+.location h2 {
+position: relative;
+z-index: 2;
+color: var(--primary);
+text-align: right;/* Move "LOCAL DE DESTAQUE" para a direita */
+width: 80%;
+max-width: 1000px;
+margin-bottom: 20px; /* Espaço entre o título e os textos */
+}
+
+.location-content {
+position: relative;
+z-index: 2;
+display: flex;/* Usa flexbox para posicionar os elementos */
+justify-content: space-between;/* Distribui os elementos nas extremidades */
+align-items: center;/* Alinha os elementos verticalmente */
+width: 80%;/* largura maxima  */
+max-width: 1000px;/*  /* Garante que o texto fique visível acima do fundo escuro */
+}
+
+.local {
+text-align: rilght;   /* Agora o texto fica alinhado à direita */
+flex: 1;
+padding-right: 10px; /* Ajuste para espaçamento */
+font-size: 18px; 
+order: 2;  /* Move para a direita */
+}
+
+.address {
+text-align: left;  /* Agora o texto fica alinhado à esquerda */
+flex: 1;
+padding-left: 20px; /* Ajuste para espaçamento */
+font-size: 18px;
+order: 1; /* Move para a esquerda */
+}
+
+.address i {
+color: var(--primary); /* Ícone azul */
+margin-right: 10px;
+font-size: 60px; /* aumentando o icone  */
+}
+
+.highlight {
+color: var(--primary);
+
+}
+/* Estilização da seção da galeria */
+.gallery {
+display: flex; /* Usa flexbox para alinhar os elementos */
+align-items: center; /* Alinha os itens verticalmente */
+justify-content: space-between; /* Separa os elementos */
+gap: 20px; /* Espaçamento entre o texto e a imagem */
+padding: 40px 80px; /* Espaçamento interno */
+flex-direction: row-reverse; /* Imagem à direita, texto à esquerda, Inverte a posição dos elementos */
+}
+
+/* Ajuste do texto, da imagem 1 "conhecendo... */
+.gallery h2 {
+width: 40%; /* Define a largura do texto */
+font-size: 26px; /* Ajuste do tamanho da fonte do text */
+color: #000; /* Cor do texto */
+text-align: left; /* Alinha o texto à esquerda */
+font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Ajuste da imagem */
+.gallery-img {
+width: 50%;
+height: 300px; /* Mantendo altura fixa */
+object-fit: cover;
+border-radius: 0px;
+}
+
+.details {
+display: flex; /* Usa flexbox para alinhar os elementos */
+align-items: center; /* Alinha os itens verticalmente */
+justify-content: space-between; /* Separa os elementos */
+gap: 40px; /* Espaçamento entre o texto e a imagem */
+padding: 40px 80px; /* Espaçamento interno */
+flex-direction: row-reverse; /* Inverte a posição dos elementos */
+}
+
+/* Estilização geral da seção */
+.details {
+display: flex;
+flex-direction: column;
+gap: 40px; /* Espaço entre os blocos */
+padding: 40px 80px;
+}
+
+/* Container para cada par de texto e imagem */
+.details-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px; /* Espaço entre os elementos */
+}
+
+/* Ajuste do texto */
+.details-text {
+width: 40%;
+font-size: 20px;
+color: #000;
+font-weight: bold;
+}
+/* Ajuste das imagens */
+.details-container img {
+    width: 50%; /* Todas as imagens com mesma largura */
+    height: 300px; /* Altura fixa para manter alinhamento */
+    object-fit: cover; /* Mantém a proporção sem distorção */
+    border-radius: 0px;
+}
+
+.details-container:nth-child(even) {
+    flex-direction: row; /* Imagem à esquerda, texto à direita */
+} 
