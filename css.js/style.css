@@ -40,7 +40,7 @@
     z-index: 1; 
 }
 
- .hero-content,  .form-container {
+ .hero-content,  .form-container, .evento {   /* aqui é para colocar em cima da sombra  */
     position: relative;
     z-index: 2;
     text-align: center;
@@ -48,37 +48,49 @@
 
 .hero-content  {
     /* background-color:rgba(0, 0, 0, 0.7); *//* ESTE É A SOMBRA PRETA EM CIMA DA IMAGEM */
-    padding: 0px;
+    padding: 170px;
     border-radius: 0px;  /* deixar a ponta da borda quadrada */
     text-align: left;      
+    
 }
 .hero-content h1 {/* INDECOR */
     color: var(--primary);
     text-align: left;
-    margin-bottom: 40px; /* espaçamento na parte debaixo das frase */
+    margin-bottom: 60px; /* espaçamento na parte debaixo das frase */
     font-size: 40px;/* aumenta a letra */
-    
+    margin: 50px;
+    padding:auto;
 }
 
-.hero-content p {/* evento */
+.hero-content p {/* text do InDecor */
     color: var(--text-color);
     word-wrap: break-word;
     font-weight: bold; /* texto em negrito */
     text-align: left;/* para deixar o texto a esquerda */
-    font-size: 20px;
-    margin-bottom: 50px;
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin: 70px;
+    display: flex;
+    flex-direction: column;
 }
 
-.hero-content h3{
-    color: var(--text-color );
+.hero-content h3{   /* data do evento */
+    color: var(--text-color);
     font-size: 10px;
- 
+    text-align: left;
+    margin-bottom: 10px;
+    margin: 60px;
+    font-size: 20PX; 
 
 }
-.hero-content p1 {
+.hero-content p1 { /* data */
     color: var(--primary);
     font-weight: bold;
     font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 60px; 
+    
 }
 /* Formulário */
 .form-container {
@@ -264,46 +276,80 @@ object-fit: cover;
 border-radius: 0px;
 }
 
+/* Seção de detalhes */
 .details {
-display: flex; /* Usa flexbox para alinhar os elementos */
-align-items: center; /* Alinha os itens verticalmente */
-justify-content: space-between; /* Separa os elementos */
-gap: 40px; /* Espaçamento entre o texto e a imagem */
-padding: 40px 80px; /* Espaçamento interno */
-flex-direction: row-reverse; /* Inverte a posição dos elementos */
-}
-
-/* Estilização geral da seção */
-.details {
-display: flex;
-flex-direction: column;
-gap: 40px; /* Espaço entre os blocos */
-padding: 40px 80px;
+    display: flex;
+    flex-direction: column; /* Mantém os detalhes em coluna */
+    gap: 40px; /* Espaço entre os blocos */
+    padding: 40px 80px;
 }
 
 /* Container para cada par de texto e imagem */
 .details-container {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 20px; /* Espaço entre os elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Espaço entre os elementos */
 }
 
-/* Ajuste do texto */
+/* Ajuste do texto da seção de detalhes */
 .details-text {
-width: 40%;
-font-size: 20px;
-color: #000;
-font-weight: bold;
+    width: 40%;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
 }
-/* Ajuste das imagens */
+
+/* Ajuste das imagens da seção de detalhes */
 .details-container img {
-    width: 50%; /* Todas as imagens com mesma largura */
-    height: 300px; /* Altura fixa para manter alinhamento */
-    object-fit: cover; /* Mantém a proporção sem distorção */
+    width: 48%;
+    height: 300px;
+    object-fit: cover;
     border-radius: 0px;
 }
 
+/* Alterna a posição da imagem e do texto para elementos pares */
 .details-container:nth-child(even) {
-    flex-direction: row; /* Imagem à esquerda, texto à direita */
-} 
+    flex-direction: row; /* deixa as imagens cda uma de um lado */
+}
+
+.cta {
+position: relative;/* Permite que os elementos filhos sejam posicionados em relação a este contêiner */
+    background: url('/img_InDecor/hrz-6.jpg') no-repeat center center/cover; /* Imagem de fundo ajustada */
+    height: 50vh; /* Define a altura da seção */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* Centraliza verticalmente os elementos */
+    align-items: center;/* Centraliza horizontalmente os elementos */
+    color: #fff;/* cor do texto */
+    text-align: center;/* Alinha o texto ao centro */
+    z-index: 10;
+}
+.cta:before {
+    content: ''; /* Cria um elemento vazio */
+    position: absolute;/* Sobrepõe a imagem de fundo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);/* deixa transparente a sombra */
+    z-index: 5;/* Garante que a sombra fique atrás do texto */
+}
+.cta h2, .cta button {
+    position: relative; /* Garante que fiquem acima da sombra */
+    z-index: 11; /* Maior que a sombra */
+}
+.footer {
+
+    text-align: center;
+    margin-top: 30px;
+    color:var(--secondary)
+}
+.footer h3{
+  margin-bottom: 30px;
+}
+.footer h4 {
+    margin-bottom: 30px;/* abaixo */
+    margin-top: 20px;/* emcima */
+    font-weight: normal; /* remove o negrito do titulo */
+}
